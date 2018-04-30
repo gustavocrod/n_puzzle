@@ -13,6 +13,10 @@ class Node:
         self.state = state
 
     def isOnDic(self, dic):
+        """
+        :param dic: recebe um dicionario para testar
+        :return: retorna true se o estado esta no dicionario, ou seja, se o estado ja foi visitado
+        """
         if (str(self.state) in dic):
             return True
 
@@ -32,6 +36,10 @@ class Node:
         print ('\n')
 
     def getPossibleMoves(self):
+        """
+        :return: retorna uma lista dos possiveis movimentos que podem ser realizados
+        (locais onde nao saia fora do range da "matriz"
+        """
         zero = self.state.index(0)
         moves = []
         if zero not in [0, 3, 6]:
